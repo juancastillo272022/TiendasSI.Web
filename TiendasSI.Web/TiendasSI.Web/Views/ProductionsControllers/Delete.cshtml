@@ -1,0 +1,51 @@
+﻿@model TiendasSI.Web.Models.Production
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Estás seguro de querer eliminar este registro?</h3>
+<div>
+    <h4>Productión</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-2">
+            <a>Titulo</a>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            <a>Fecha de lanzamiento</a>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class = "col-sm-2">
+            <a>Productor</a>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Producer)
+        </dd>
+        <dt class = "col-sm-2">
+            <a>Tipo de produccción</a>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class = "col-sm-2">
+            <a>Valor</a>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index">Regresar al inicio</a>
+    </form>
+</div>

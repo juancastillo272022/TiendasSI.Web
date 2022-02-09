@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TiendasSI.Web.Models.Production>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Produccciones</h1>
+
+<p>
+    <a asp-action="Create">Registrar nueva producción</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a>Titulo</a>
+            </th>
+            <th>
+                <a>Fecha de lanzamiento</a>
+            </th>
+            <th>
+                <a>Productor</a>
+            </th>
+            <th>
+                <a>Tipo de producción</a>
+            </th>
+            <th>
+                <a>Valor recaudado</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {id=item.IdProduction}) |
+                @Html.ActionLink("Detalles", "Details", new {id=item.IdProduction}) |
+                @Html.ActionLink("Borrar", "Delete", new { id=item.IdProduction})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
